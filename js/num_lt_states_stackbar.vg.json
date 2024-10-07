@@ -1,0 +1,87 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Chronic Conditions by State",
+    "background":"#FAF3E0",
+    "width": 300,
+    "height": 300,
+    "data": {
+      "url": "https://raw.githubusercontent.com/Nitya68/a2/main/data/no_lt_states.csv",
+      "format": {
+        "type": "csv"
+      }
+    },
+    "params": [
+      {
+        "name": "year_selection",
+        "bind": {
+          "input": "select",
+          "options": ["2007-08", "2011-12", "2014-15", "2017-18", "2022"],
+          "name": "Year Selection"
+        },
+        "value": "2022" 
+      }
+    ],
+    "transform": [
+      {
+        "filter": "datum.Year == year_selection"
+      },
+      {
+        "fold": [
+          "No Selected Chronic Conditions",
+          "1 Chronic Condition",
+          "2 Chronic Conditions",
+          "1 or More Chronic Conditions",
+          "2 or More Chronic Conditions",
+          "3 or More Chronic Conditions"
+        ],
+        "as": ["Chronic Condition Type", "Percentage"]
+      },
+      {
+        "filter": "datum.State != 'Australia'"
+      }
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "State",
+        "type": "ordinal",
+        "axis": {
+          "title": "State"
+        }
+      },
+      "y": {
+        "field": "Percentage",
+        "type": "quantitative",
+        "axis": {
+          "title": "Percentage"
+        }
+      },
+      "color": {
+        "field": "Chronic Condition Type",
+        "type": "nominal",
+        "scale": {
+          "domain": [
+            "No Selected Chronic Conditions",
+            "1 Chronic Condition",
+            "2 Chronic Conditions",
+            "1 or More Chronic Conditions",
+            "2 or More Chronic Conditions",
+            "3 or More Chronic Conditions"
+          ],
+          "range": [
+            "#a6cee3",
+            "#ffeda0",
+            "#feb24c",
+            "#fde0dd",
+            "#fa9fb5",
+            "#c51b8a"
+          ]
+        }
+      },
+      "tooltip": [
+        {"field": "Chronic Condition Type", "type": "nominal"},
+        {"field": "Percentage", "type": "quantitative", "title":"Percentage of population"}
+      ]
+    }
+  }
+  

@@ -1,0 +1,51 @@
+/* styles.css */
+
+html,body {
+	background-color:#FAF3E0 ;
+	max-width: 1000px;
+
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FAF3E0;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin: 20px 0;
+    color: #2c3e50;
+}
+
+p {
+    padding: 10px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.pure-g{
+	display:flex;
+	flex-wrap:warp;
+	justify-content: space-evenly;
+	padding: 50px 5px;
+	background-color:#FAF3E0 ;
+	
+}
+
+
+/* #choroplethmap, #areachart, #stackedbarchart, #linechart, #heatmap {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0;
+}
+
+/* Responsive styling for charts and layout */
+/*@media (min-width: 768px) {
+    #areachart, #stackedbarchart, #linechart, #heatmap {
+        height: 500px;
+    }
+} 
+*/

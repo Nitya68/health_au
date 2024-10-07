@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State of Health in Australia</title>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+</head>
+
+<body>
+
+  <div class="heading">
+    <h1>State of Health in Australia</h1>
+    <p>Placeholder for text</p>
+  </div>
+
+  <!-- 1st Row: Choropleth Map in Full Width -->
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <div id="choroplethmap"></div> 
+      <script type="text/javascript">
+        var choropleth = "js/expenditure_choropleth.vg.json";
+        vegaEmbed('#choroplethmap', choropleth).then(function(result) {
+          // Vega view instance
+        }).catch(console.error);
+      </script>
+    </div>
+  </div>
+
+  <!-- 2nd Row: Area Chart (Left), Stacked Bar Chart (Right) -->
+  <div class="pure-g">
+    <div class="pure-u-1-2" >
+      <div id="areachart"></div> 
+      <script type="text/javascript">
+        var spec2 = "js/num_lt_areachart.vg.json";
+        vegaEmbed('#areachart', spec2).then(function(result) {
+          // Vega view instance
+        }).catch(console.error);
+      </script>
+    </div>
+    <div class="pure-u-1-2" >
+      <div id="stackedbar"></div> 
+      <script type="text/javascript">
+        var spec3 = "js/num_lt_states_stackbar.vg.json";
+        vegaEmbed('#stackedbar', spec3).then(function(result) {
+          // Vega view instance
+        }).catch(console.error);
+      </script>
+    </div>
+  </div>
+
+  <!-- 3rd Row: Placeholder for Text (Left & Right) -->
+  <div class="pure-g">
+    <div class="pure-u-1-2">
+      <p>Placeholder for text</p>
+    </div>
+    <div class="pure-u-1-2">
+      <p>Placeholder for text</p>
+    </div>
+  </div>
+
+  <!-- 4th Row: Line Chart (Left), Placeholder for Text (Right) -->
+  <div class="pure-g">
+    <div class="pure-u-1-2">
+      <div id="linechart"></div> 
+      <script type="text/javascript">
+        var spec4 = "js/selected_lt_cond_linechart.vg.json";
+        vegaEmbed('#linechart', spec4).then(function(result) {
+          // Vega view instance
+        }).catch(console.error);
+      </script>
+    </div>
+    <div class="pure-u-1-2">
+      <p>Placeholder for text</p>
+    </div>
+  </div>
+
+  <!-- 5th Row: Placeholder for Text (Left), Heatmap (Right) -->
+  <div class="pure-g">
+  
+    <div class="pure-u-1">
+      <div id="heatmap"></div> 
+      <script type="text/javascript">
+        var spec5 = "js/health_risks_states_heatmap.vg.json";
+        vegaEmbed('#heatmap', spec5).then(function(result) {
+          // Vega view instance
+        }).catch(console.error);
+      </script>
+    </div>
+  </div>
+
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <p>Placeholder for text</p>
+    </div>
+  </div>
+  
+</body>
+</html>
