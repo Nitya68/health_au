@@ -1,6 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "background":"#FAF3E0",
+    "title":"Chronic conditions in Australia",
     "width": 300,
     "height": 300,
     "data": {

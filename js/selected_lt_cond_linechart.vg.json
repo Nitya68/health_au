@@ -1,10 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "",
+    "title": "Selected Long-Term Chronic Conditions",
     "background":"#FAF3E0",
     "repeat": ["ACT", "NT", "NSW", "VIC", "WA", "SA", "QLD", "TAS"],
     "columns": 2,
-    "spacing": 50,
+    "spacing": 100,
     "params": [
       {
         "name": "Condition_selection",
@@ -39,7 +39,7 @@
     ],
     "spec": {
       "width": 350,
-      "height": 200,
+      "height": 180,
       "data": {
       "url": "https://raw.githubusercontent.com/Nitya68/a2/main/data/Selected_lt_states_wide.csv"},
       "layer": [
@@ -77,6 +77,9 @@
                   "#9467bd",  
                   "#e41a1c"   
                 ]
+              },
+              "legend": {
+                "orient": "bottom"
               }
             },
             "tooltip": [
